@@ -1,7 +1,13 @@
 {
-  "name": "@kp/shared",
-  "version": "0.0.0",
-  "private": true,
-  "main": "index.js",
-  "type": "module"
+	"name": "@kp/shared",
+	"version": "0.0.0",
+	"private": true,
+	"main": "src/index.js",
+	"types": "build/index.d.ts",
+	"type": "module",
+	"scripts": {
+		"postinstall": "npm run build",
+		"build:clean": "rm -rf build",
+		"build": "npm run build:clean && tsc -p tsconfig.build.json"
+	}
 }
